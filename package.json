@@ -2,7 +2,7 @@
   "name": "chat-node-ts",
   "version": "1.0.0",
   "description": "Simple chat app using nodejs Socket and typescript",
-  "main": "app.ts",
+  "main": "src/app.ts",
   "scripts": {
     "build": "tsc",
     "start": "nodemon dist/app.js",
@@ -25,7 +25,9 @@
     "tailwindcss": "^3.2.7"
   },
   "devDependencies": {
+    "@types/node": "^18.14.0",
     "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1",
     "typescript": "^4.9.5"
   }
 }
