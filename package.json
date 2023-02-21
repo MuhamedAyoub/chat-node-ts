@@ -1,0 +1,31 @@
+{
+  "name": "chat-node-ts",
+  "version": "1.0.0",
+  "description": "Simple chat app using nodejs Socket and typescript",
+  "main": "app.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "nodemon dist/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ameri Mohamed Ayoub",
+  "license": "MIT",
+  "dependencies": {
+    "@socket.io/redis-adapter": "^8.1.0",
+    "autoprefixer": "^10.4.13",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "moment": "^2.29.4",
+    "mongoose": "^6.9.2",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
+    "pug": "^3.0.2",
+    "redis": "^4.6.4",
+    "socket.io": "^4.6.1",
+    "tailwindcss": "^3.2.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "typescript": "^4.9.5"
+  }
+}
