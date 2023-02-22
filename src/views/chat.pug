@@ -1,0 +1,24 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible' content='ie=edge')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css' integrity='sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=' crossorigin='anonymous')
+    link(rel='stylesheet' href='./styles/global.css')
+    title Chat-node-app
+.mx-auto.my-36.flex.flex-col.border-2.bg-white.text-black.shadow-xl(class='h-[300px] w-[350px]')
+    .mx-8.mt-7.mb-1.flex.flex-row.justify-start.space-x-2
+        .h-7.w-3(class='bg-[#0DE6AC]')
+        .w-3.text-center.font-sans.text-xl.font-bold
+            h1 Login
+    .flex.flex-col.items-center
+        input.my-2.w-72.border.p-2(type='email' placeholder='Username')
+        select#room.my-2.w-72.border.p-2(name='room')
+            option(value='JavaScript') JavaScript
+            option(value='Python') Python
+            option(value='PHP') PHP
+            option(value='C#') C#
+            option(value='Ruby') Ruby
+            option(value='Java') Java
+    .my-2.flex.justify-center
+        button.w-72.border.p-2.font-sans(class='bg-[#0DE6AC]') JOIN
