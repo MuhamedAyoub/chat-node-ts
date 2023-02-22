@@ -7,7 +7,8 @@ import {URL} from "url";
 
 //TODO Utls Functions
 const getDirRootName = ():String => {
-    return new URL('.', import.meta.url).pathname;
+  //  return new URL('.', import.meta.url).pathname;
+    return "/home/moha_ayoub/repos2/chat-node-ts/src/";
 }
 
 // Create Server
@@ -27,7 +28,12 @@ const io = new Server<
     SocketData
 >(server)
 
-
+app.get("/",(req, res) => {
+    res.render('chat.pug')
+})
+app.get("/login",(req, res) => {
+    res.render("login.pug",{})
+})
 
 io.on('connection',(socket) => {
     socket.emit("noArg");
