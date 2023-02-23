@@ -1,1 +1,2 @@
- npx tailwindcss -i src/public/styles/tailwind.css -o src/public/styles/global.css --watch
+ npx tailwindcss -i src/public/
+ styles/tailwind.css -o src/public/styles/global.css --watch

@@ -32,15 +32,23 @@ app.get("/",(req, res) => {
     res.render('chat.pug')
 })
 app.get("/login",(req, res) => {
-    res.render("login.pug",{})
+    res.render("index.pug",{})
 })
 app.get("/chat",(req, res) => {
     res.sendFile( `${getDirRootName()}views/chat.html`)
 })
 io.on('connection',(socket) => {
     console.log("New Connection from WS")
-    socket.emit('message',"Welcom to Node.ts")
+
+    socket.emit('message',"Welcom to Node chat")
+    // Broadcast When user connect
+    socket.broadcast.emit("message","A user has joined the chat ")
+
+    socket.on("chatMessage",(msg) => console.log(msg))
+
 })
+
+
 
 const PORT  = 3000 || process.env.PORT
 
