@@ -1,16 +1,11 @@
-doctype html
-| PASTE YOUR HTML CODE HERE
-head
-    title Pug
-    meta(charset='UTF-8')
-    meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    meta(http-equiv='X-UA-Compatible' content='ie=edge')
-    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css' integrity='sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=' crossorigin='anonymous')
-    link(rel='stylesheet' href='styles/global.css')
-    title Chat-node-app
-// component
-body
- div(class="bg-")
+html
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css' integrity='sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=' crossorigin='anonymous')
+        link(rel='stylesheet' type='text/css' href='styles/main.css')
+        title Chat App
+    div
     .w-full.h-32(style='background-color: #449388')
     .container.mx-auto(style='margin-top: -128px;')
         .py-6.h-screen
@@ -20,7 +15,7 @@ body
                     // Header
                     .py-2.px-3.bg-grey-lighter.flex.flex-row.justify-between.items-center
                         div
-                            img.w-10.h-10.rounded-full(src='http://andressantibanez.com/res/avatar.png')
+                            img.w-10.h-10.rounded-full(src='assets/rooms/whsapp.png')
                         .flex
                             div
                                 svg(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' width='24' height='24')
@@ -38,7 +33,7 @@ body
                     .bg-grey-lighter.flex-1.overflow-auto
                         .px-3.flex.items-center.bg-grey-light.cursor-pointer
                             div
-                                img.h-12.w-12.rounded-full(src='https://darrenjameseeley.files.wordpress.com/2014/09/expendables3.jpeg')
+                                img.h-12.w-12.rounded-full(src='assets/rooms/python.png')
                             .ml-4.flex-1.border-b.border-grey-lighter.py-4
                                 .flex.items-bottom.justify-between
                                     p.text-grey-darkest
@@ -49,7 +44,7 @@ body
                                     | Get Andr&eacute;s on this movie ASAP!
                         .bg-white.px-3.flex.items-center.cursor-pointer(class='hover:bg-grey-lighter')
                             div
-                                img.h-12.w-12.rounded-full(src='https://www.biography.com/.image/t_share/MTE5NDg0MDU1MTIyMTE4MTU5/arnold-schwarzenegger-9476355-1-402.jpg')
+                                img.h-12.w-12.rounded-full(src='assets/rooms/java.png')
                             .ml-4.flex-1.border-b.border-grey-lighter.py-4
                                 .flex.items-bottom.justify-between
                                     p.text-grey-darkest
@@ -60,7 +55,7 @@ body
                                     | I&apos;ll be back
                         .bg-white.px-3.flex.items-center.cursor-pointer(class='hover:bg-grey-lighter')
                             div
-                                img.h-12.w-12.rounded-full(src='https://www.famousbirthdays.com/headshots/russell-crowe-6.jpg')
+                                img.h-12.w-12.rounded-full(src='assets/rooms/go.png')
                             .ml-4.flex-1.border-b.border-grey-lighter.py-4
                                 .flex.items-bottom.justify-between
                                     p.text-grey-darkest
@@ -71,7 +66,7 @@ body
                                     | Hold the line!
                         .bg-white.px-3.flex.items-center.cursor-pointer(class='hover:bg-grey-lighter')
                             div
-                                img.h-12.w-12.rounded-full(src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGpYTzuO0zLW7yadaq4jpOz2SbsX90okb24Z9GtEvK6Z9x2zS5')
+                                img.h-12.w-12.rounded-full(src='assets/rooms/js.png')
                             .ml-4.flex-1.border-b.border-grey-lighter.py-4
                                 .flex.items-bottom.justify-between
                                     p.text-grey-darkest
@@ -81,28 +76,19 @@ body
                                 p.text-grey-dark.mt-1.text-sm
                                     | Show me the money!
                         .bg-white.px-3.flex.items-center.cursor-pointer(class='hover:bg-grey-lighter')
-                            div
-                                img.h-12.w-12.rounded-full(src='https://www.biography.com/.image/t_share/MTE5NTU2MzE2MjE4MTY0NzQ3/harrison-ford-9298701-1-sized.jpg')
-                            .ml-4.flex-1.border-b.border-grey-lighter.py-4
-                                .flex.items-bottom.justify-between
-                                    p.text-grey-darkest
-                                        | Harrison Ford
-                                    p.text-xs.text-grey-darkest
-                                        | 12:45 pm
-                                p.text-grey-dark.mt-1.text-sm
-                                    | Tell Java I have the money
+
                 // Right
                 .border.flex.flex-col(class='w-2/3')
                     // Header
                     .py-2.px-3.bg-grey-lighter.flex.flex-row.justify-between.items-center
                         .flex.items-center
                             div
-                                img.w-10.h-10.rounded-full(src='https://darrenjameseeley.files.wordpress.com/2014/09/expendables3.jpeg')
+                                img.w-10.h-10.rounded-full(src='assets/rooms/python.png')
                             .ml-4
                                 p.text-grey-darkest
-                                    | New Movie! Expendables 4
+                                    | Python Room
                                 p.text-grey-darker.text-xs.mt-1
-                                    | Andr&eacute;s, Tom, Harrison, Arnold, Sylvester
+                                    | Mohamed,Ahmed,mahmoud
                         .flex
                             div
                                 svg(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' width='24' height='24')

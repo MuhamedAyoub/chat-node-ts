@@ -1,26 +1,343 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset='UTF-8')
-        meta(name='viewport' content='width=device-width, initial-scale=1.0')
-        meta(http-equiv='X-UA-Compatible' content='ie=edge')
-        link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css' integrity='sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=' crossorigin='anonymous')
-        link(rel='stylesheet' href='../public/styles/global.css')
-        title Chat-node-app
-   body
-    div.mx-auto.my-36.flex.flex-col.border-2.bg-white.text-black.shadow-xl(class='h-[300px] w-[350px]')
-        .mx-8.mt-7.mb-1.flex.flex-row.justify-start.space-x-2
-            .h-7.w-3(class='bg-[#0DE6AC]')
-            .w-3.text-center.font-sans.text-xl.font-bold
-                h1 Login
-        .flex.flex-col.items-center
-            nput.my-2.w-72.border.p-2(type='email' placeholder='Username')
-            select#room.my-2.w-72.border.p-2(name='room')
-                option(value='JavaScript') JavaScript
-                option(value='Python') Python
-                option(value='PHP') PHP
-                option(value='C#') C#
-                option(value='Ruby') Ruby
-                option(value='Java') Java
-        .my-2.flex.justify-center
-            button.w-72.border.p-2.font-sans(class='bg-[#0DE6AC]') JOIN
+head
+    title Whatsapp Template
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(rel='stylesheet' href='styles/chat.css')
+    // Font Awesome File
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+.container.app
+    .row.app-one
+        .col-sm-4.side
+            .side-one
+                // Heading
+                .row.heading
+                    .col-sm-3.col-xs-3.heading-avatar
+                        .heading-avatar-icon
+                            img(src='http://shurl.esy.es/y')
+                    .col-sm-1.col-xs-1.heading-dot.pull-right
+                        i.fa.fa-ellipsis-v.fa-2x.pull-right(aria-hidden='true')
+                    .col-sm-2.col-xs-2.heading-compose.pull-right
+                        i.fa.fa-comments.fa-2x.pull-right(aria-hidden='true')
+                // Heading End
+                // SearchBox
+                .row.searchBox
+                    .col-sm-12.searchBox-inner
+                        .form-group.has-feedback
+                            input#searchText.form-control(type='text' name='searchText' placeholder='Search')
+                            span.glyphicon.glyphicon-search.form-control-feedback
+                // Search Box End
+                // sideBar
+                .row.sideBar
+                    .row.sideBar-body
+                        .col-sm-3.col-xs-3.sideBar-avatar
+                            .avatar-icon
+                                img(src='http://shurl.esy.es/y')
+                        .col-sm-9.col-xs-9.sideBar-main
+                            .row
+                                .col-sm-8.col-xs-8.sideBar-name
+                                    span.name-meta
+                                        | Ankit Jain
+                                .col-sm-4.col-xs-4.pull-right.sideBar-time
+                                    span.time-meta.pull-right
+                                        | 18:18
+                    .row.sideBar-body
+                        .col-sm-3.col-xs-3.sideBar-avatar
+                            .avatar-icon
+                                img(src='http://shurl.esy.es/y')
+                        .col-sm-9.col-xs-9.sideBar-main
+                            .row
+                                .col-sm-8.col-xs-8.sideBar-name
+                                    span.name-meta
+                                        | Ankit Jain
+                                .col-sm-4.col-xs-4.pull-right.sideBar-time
+                                    span.time-meta.pull-right
+                                        | 18:18
+                    .row.sideBar-body
+                        .col-sm-3.col-xs-3.sideBar-avatar
+                            .avatar-icon
+                                img(src='http://shurl.esy.es/y')
+                        .col-sm-9.col-xs-9.sideBar-main
+                            .row
+                                .col-sm-8.col-xs-8.sideBar-name
+                                    span.name-meta
+                                        | Ankit Jain
+                                .col-sm-4.col-xs-4.pull-right.sideBar-time
+                                    span.time-meta.pull-right
+                                        | 18:18
+                    .row.sideBar-body
+                        .col-sm-3.col-xs-3.sideBar-avatar
+                            .avatar-icon
+                                img(src='http://shurl.esy.es/y')
+                        .col-sm-9.col-xs-9.sideBar-main
+                            .row
+                                .col-sm-8.col-xs-8.sideBar-name
+                                    span.name-meta
+                                        | Ankit Jain
+                                .col-sm-4.col-xs-4.pull-right.sideBar-time
+                                    span.time-meta.pull-right
+                                        | 18:18
+                    .row.sideBar-body
+                        .col-sm-3.col-xs-3.sideBar-avatar
+                            .avatar-icon
+                                img(src='http://shurl.esy.es/y')
+                        .col-sm-9.col-xs-9.sideBar-main
+                            .row
+                                .col-sm-8.col-xs-8.sideBar-name
+                                    span.name-meta
+                                        | Ankit Jain
+                                .col-sm-4.col-xs-4.pull-right.sideBar-time
+                                    span.time-meta.pull-right
+                                        | 18:18
+                    .row.sideBar-body
+                        .col-sm-3.col-xs-3.sideBar-avatar
+                            .avatar-icon
+                                img(src='http://shurl.esy.es/y')
+                        .col-sm-9.col-xs-9.sideBar-main
+                            .row
+                                .col-sm-8.col-xs-8.sideBar-name
+                                    span.name-meta
+                                        | Ankit Jain
+                                .col-sm-4.col-xs-4.pull-right.sideBar-time
+                                    span.time-meta.pull-right
+                                        | 18:18
+                    .row.sideBar-body
+                        .col-sm-3.col-xs-3.sideBar-avatar
+                            .avatar-icon
+                                img(src='http://shurl.esy.es/y')
+                        .col-sm-9.col-xs-9.sideBar-main
+                            .row
+                                .col-sm-8.col-xs-8.sideBar-name
+                                    span.name-meta
+                                        | Ankit Jain
+                                .col-sm-4.col-xs-4.pull-right.sideBar-time
+                                    span.time-meta.pull-right
+                                        | 18:18
+                    .row.sideBar-body
+                        .col-sm-3.col-xs-3.sideBar-avatar
+                            .avatar-icon
+                                img(src='http://shurl.esy.es/y')
+                        .col-sm-9.col-xs-9.sideBar-main
+                            .row
+                                .col-sm-8.col-xs-8.sideBar-name
+                                    span.name-meta
+                                        | Ankit Jain
+                                .col-sm-4.col-xs-4.pull-right.sideBar-time
+                                    span.time-meta.pull-right
+                                        | 18:18
+                    .row.sideBar-body
+                        .col-sm-3.col-xs-3.sideBar-avatar
+                            .avatar-icon
+                                img(src='http://shurl.esy.es/y')
+                        .col-sm-9.col-xs-9.sideBar-main
+                            .row
+                                .col-sm-8.col-xs-8.sideBar-name
+                                    span.name-meta
+                                        | Ankit Jain
+                                .col-sm-4.col-xs-4.pull-right.sideBar-time
+                                    span.time-meta.pull-right
+                                        | 18:18
+                    .row.sideBar-body
+                        .col-sm-3.col-xs-3.sideBar-avatar
+                            .avatar-icon
+                                img(src='http://shurl.esy.es/y')
+                        .col-sm-9.col-xs-9.sideBar-main
+                            .row
+                                .col-sm-8.col-xs-8.sideBar-name
+                                    span.name-meta
+                                        | Ankit Jain
+                                .col-sm-4.col-xs-4.pull-right.sideBar-time
+                                    span.time-meta.pull-right
+                                        | 18:18
+                // Sidebar End
+            .side-two
+                // Heading
+                .row.newMessage-heading
+                    .row.newMessage-main
+                        .col-sm-2.col-xs-2.newMessage-back
+                            i.fa.fa-arrow-left(aria-hidden='true')
+                        .col-sm-10.col-xs-10.newMessage-title
+                            | New Chat
+                // Heading End
+                // ComposeBox
+                .row.composeBox
+                    .col-sm-12.composeBox-inner
+                        .form-group.has-feedback
+                            input#composeText.form-control(type='text' name='searchText' placeholder='Search People')
+                            span.glyphicon.glyphicon-search.form-control-feedback
+                // ComposeBox End
+                // sideBar
+                .row.compose-sideBar
+                    .row.sideBar-body
+                        .col-sm-3.col-xs-3.sideBar-avatar
+                            .avatar-icon
+                                img(src='http://shurl.esy.es/y')
+                        .col-sm-9.col-xs-9.sideBar-main
+                            .row
+                                .col-sm-8.col-xs-8.sideBar-name
+                                    span.name-meta
+                                        | Ankit Jain
+                                .col-sm-4.col-xs-4.pull-right.sideBar-time
+                                    span.time-meta.pull-right
+                                        | 18:18
+                    .row.sideBar-body
+                        .col-sm-3.col-xs-3.sideBar-avatar
+                            .avatar-icon
+                                img(src='http://shurl.esy.es/y')
+                        .col-sm-9.col-xs-9.sideBar-main
+                            .row
+                                .col-sm-8.col-xs-8.sideBar-name
+                                    span.name-meta
+                                        | Ankit Jain
+                                .col-sm-4.col-xs-4.pull-right.sideBar-time
+                                    span.time-meta.pull-right
+                                        | 18:18
+                    .row.sideBar-body
+                        .col-sm-3.col-xs-3.sideBar-avatar
+                            .avatar-icon
+                                img(src='http://shurl.esy.es/y')
+                        .col-sm-9.col-xs-9.sideBar-main
+                            .row
+                                .col-sm-8.col-xs-8.sideBar-name
+                                    span.name-meta
+                                        | Ankit Jain
+                                .col-sm-4.col-xs-4.pull-right.sideBar-time
+                                    span.time-meta.pull-right
+                                        | 18:18
+                    .row.sideBar-body
+                        .col-sm-3.col-xs-3.sideBar-avatar
+                            .avatar-icon
+                                img(src='http://shurl.esy.es/y')
+                        .col-sm-9.col-xs-9.sideBar-main
+                            .row
+                                .col-sm-8.col-xs-8.sideBar-name
+                                    span.name-meta
+                                        | Ankit Jain
+                                .col-sm-4.col-xs-4.pull-right.sideBar-time
+                                    span.time-meta.pull-right
+                                        | 18:18
+                    .row.sideBar-body
+                        .col-sm-3.col-xs-3.sideBar-avatar
+                            .avatar-icon
+                                img(src='http://shurl.esy.es/y')
+                        .col-sm-9.col-xs-9.sideBar-main
+                            .row
+                                .col-sm-8.col-xs-8.sideBar-name
+                                    span.name-meta
+                                        | Ankit Jain
+                                .col-sm-4.col-xs-4.pull-right.sideBar-time
+                                    span.time-meta.pull-right
+                                        | 18:18
+                    .row.sideBar-body
+                        .col-sm-3.col-xs-3.sideBar-avatar
+                            .avatar-icon
+                                img(src='http://shurl.esy.es/y')
+                        .col-sm-9.col-xs-9.sideBar-main
+                            .row
+                                .col-sm-8.col-xs-8.sideBar-name
+                                    span.name-meta
+                                        | Ankit Jain
+                                .col-sm-4.col-xs-4.pull-right.sideBar-time
+                                    span.time-meta.pull-right
+                                        | 18:18
+                    .row.sideBar-body
+                        .col-sm-3.col-xs-3.sideBar-avatar
+                            .avatar-icon
+                                img(src='http://shurl.esy.es/y')
+                        .col-sm-9.col-xs-9.sideBar-main
+                            .row
+                                .col-sm-8.col-xs-8.sideBar-name
+                                    span.name-meta
+                                        | Ankit Jain
+                                .col-sm-4.col-xs-4.pull-right.sideBar-time
+                                    span.time-meta.pull-right
+                                        | 18:18
+                    .row.sideBar-body
+                        .col-sm-3.col-xs-3.sideBar-avatar
+                            .avatar-icon
+                                img(src='http://shurl.esy.es/y')
+                        .col-sm-9.col-xs-9.sideBar-main
+                            .row
+                                .col-sm-8.col-xs-8.sideBar-name
+                                    span.name-meta
+                                        | Ankit Jain
+                                .col-sm-4.col-xs-4.pull-right.sideBar-time
+                                    span.time-meta.pull-right
+                                        | 18:18
+                    .row.sideBar-body
+                        .col-sm-3.col-xs-3.sideBar-avatar
+                            .avatar-icon
+                                img(src='http://shurl.esy.es/y')
+                        .col-sm-9.col-xs-9.sideBar-main
+                            .row
+                                .col-sm-8.col-xs-8.sideBar-name
+                                    span.name-meta
+                                        | Ankit Jain
+                                .col-sm-4.col-xs-4.pull-right.sideBar-time
+                                    span.time-meta.pull-right
+                                        | 18:18
+                    .row.sideBar-body
+                        .col-sm-3.col-xs-3.sideBar-avatar
+                            .avatar-icon
+                                img(src='http://shurl.esy.es/y')
+                        .col-sm-9.col-xs-9.sideBar-main
+                            .row
+                                .col-sm-8.col-xs-8.sideBar-name
+                                    span.name-meta
+                                        | Ankit Jain
+                                .col-sm-4.col-xs-4.pull-right.sideBar-time
+                                    span.time-meta.pull-right
+                                        | 18:18
+            // Sidebar End
+        // New Message Sidebar End
+        // Conversation Start
+        .col-sm-8.conversation
+            // Heading
+            .row.heading
+                .col-sm-2.col-md-1.col-xs-3.heading-avatar
+                    .heading-avatar-icon
+                        img(src='http://shurl.esy.es/y')
+                .col-sm-8.col-xs-7.heading-name
+                    a.heading-name-meta
+                        | Ankit Jain
+                    span.heading-online Online
+                .col-sm-1.col-xs-1.heading-dot.pull-right
+                    i.fa.fa-ellipsis-v.fa-2x.pull-right(aria-hidden='true')
+            // Heading End
+            // Message Box
+            #conversation.row.message
+                .row.message-previous
+                    .col-sm-12.previous
+                        a#ankitjain28(onclick='previous(this)' name='20')
+                            | Show Previous Message!
+                .row.message-body
+                    .col-sm-12.message-main-receiver
+                        .receiver
+                            .message-text
+                                | Hyy, Its Awesome..!
+                            span.message-time.pull-right
+                                | Sun
+                .row.message-body
+                    .col-sm-12.message-main-sender
+                        .sender
+                            .message-text
+                                | Thanks n I know its awesome...!
+                            span.message-time.pull-right
+                                | Sun
+            // Message Box End
+            // Reply Box
+            .row.reply
+                .col-sm-1.col-xs-1.reply-emojis
+                    i.fa.fa-smile-o.fa-2x
+                .col-sm-9.col-xs-9.reply-main
+                    textarea#comment.form-control(rows='1')
+                .col-sm-1.col-xs-1.reply-recording
+                    i.fa.fa-microphone.fa-2x(aria-hidden='true')
+                .col-sm-1.col-xs-1.reply-send
+                    i.fa.fa-send.fa-2x(aria-hidden='true')
+            // Reply Box End
+        // Conversation End
+    // App One End
+// App End

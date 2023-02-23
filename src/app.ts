@@ -20,7 +20,7 @@ const server = http.createServer(app)
 app.use(express.json());
 app.set("views",getDirRootName()+"views");
 app.set('view engine','pug')
-app.use(express.static(getDirRootName() + "public"))
+app.use(express.static(getDirRootName() + "static"))
 const io = new Server<
     ClientToServerEvents,
     ServerToClientEvents,
@@ -34,7 +34,9 @@ app.get("/",(req, res) => {
 app.get("/login",(req, res) => {
     res.render("login.pug",{})
 })
-
+app.get("/chat",(req, res) => {
+    res.sendFile( `${getDirRootName()}views/chat.html`)
+})
 io.on('connection',(socket) => {
     socket.emit("noArg");
 })
