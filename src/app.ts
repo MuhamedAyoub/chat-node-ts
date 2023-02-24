@@ -1,8 +1,11 @@
 import express from "express";
 import * as http from "http";
-import  {Server} from "socket.io";
-import {ClientToServerEvents,InterServerEvents,ServerToClientEvents,SocketData} from "./types/socket";
-import {URL} from "url";
+import HomeRouter from "./routes/Home.js"
+import ChatRouter from "./routes/Chat.js"
+import path from "path";
+import socker from "./socker/sockerController.js"
+import {Server} from "socket.io";
+import {ClientToServerEvents, InterServerEvents, ServerToClientEvents, SocketData} from "types/socket";
 
 
 //TODO Utls Functions
@@ -18,40 +21,15 @@ const server = http.createServer(app)
 
 // Apply middleware
 app.use(express.json());
-app.set("views",getDirRootName()+"views");
-app.set('view engine','pug')
+app.set("views",path.resolve("src","views"));
+
 app.use(express.static(getDirRootName() + "static"))
-const io = new Server<
-    ClientToServerEvents,
-    ServerToClientEvents,
-    InterServerEvents,
-    SocketData
->(server)
-
-app.get("/",(req, res) => {
-    res.render('chat.pug')
-})
-app.get("/login",(req, res) => {
-    res.render("index.pug",{})
-})
-app.get("/chat",(req, res) => {
-    res.sendFile( `${getDirRootName()}views/chat.html`)
-})
-io.on('connection',(socket) => {
-    console.log("New Connection from WS")
-
-    socket.emit('message',"Welcom to Node chat")
-    // Broadcast When user connect
-    socket.broadcast.emit("message","A user has joined the chat ")
-
-    socket.on("chatMessage",(msg) => console.log(msg))
-
-})
-
-
-
+// Use Routes
+app.use("app",HomeRouter);
+app.use("app/chat",ChatRouter);
+// Use Socket
+socker(server);
 const PORT  = 3000 || process.env.PORT
-
 
 server.listen(PORT , () => {
     console.log('SERVER RUNNING ON PORT ', PORT);
