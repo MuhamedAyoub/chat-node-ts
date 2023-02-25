@@ -9,3 +9,28 @@ datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
 }
+
+
+model User {
+  id String @id  @default(auto()) @map("_id") @db.ObjectId
+  username String @unique
+  room   Room @relation(fields: [roomName], references: [name])
+  roomName String
+  messages message[]
+
+}
+model message {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  text String
+  user User @relation(fields: [username],references: [username])
+  username String
+  room   Room @relation(fields: [roomName], references: [name])
+  roomName String
+
+}
+model Room {
+  id String @id  @default(auto()) @map("_id") @db.ObjectId
+  name String @unique
+  users User[]
+  messages message[]
+}

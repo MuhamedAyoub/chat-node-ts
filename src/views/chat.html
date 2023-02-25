@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="styles/main.css"/>
     <title>Chat App</title>
 </head>
-<div></div>
+<body>
 <div class="w-full h-32 bg-cyan-700	"></div>
 <div class="container mx-auto" style="margin-top: -128px;">
     <div class="py-6 h-screen">
@@ -117,7 +117,7 @@
                     <div class="py-2 px-3 message-wrapper  ">
                         <div class="flex justify-center mb-2">
                             <div class="rounded py-2 px-4" style="background-color: #DDECF2">
-                                <p class="text-sm uppercase">February 20, 2018</p>
+                                <p class="text-sm uppercase">February 20, 2023</p>
                             </div>
                         </div>
                         <div class="flex justify-center mb-4">
@@ -125,22 +125,18 @@
                                 <p class="text-xs">Messages to this chat and calls are now secured with end-to-end encryption. Tap for more info.</p>
                             </div>
                         </div>
-                        <div class="flex mb-2">
-                            <div class="rounded py-2 px-3" style="background-color: #F2F2F2">
-                                <p class="text-sm text-teal">Sylverter Stallone</p>
-                                <p class="text-sm mt-1">Hi everyone! Glad you could join! I am making a new movie.</p>
-                                <p class="text-right text-xs text-grey-dark mt-1">12:45 pm</p>
-                            </div>
-                        </div>
-                        <div class="flex justify-end mb-2">
+
+                        <div class="flex  mb-2">
                             <div class="rounded py-2 px-3" style="background-color: #E2F7CB">
+                                <p class="text-xs text-teal">Adam</p>
                                 <p class="text-sm mt-1">Hi guys.</p>
                                 <p class="text-right text-xs text-grey-dark mt-1">12:45 pm</p>
                             </div>
                         </div>
-                        <div class="flex justify-end mb-2">
+                        <div class="flex  mb-2">
                             <div class="rounded py-2 px-3" style="background-color: #E2F7CB">
-                                <p class="text-sm mt-1">Count me in</p>
+                                <p class="text-xs text-teal">Mohamed</p>
+                                <p class="text-sm mt-1">How are you doing </p>
                                 <p class="text-right text-xs text-grey-dark mt-1">12:45 pm</p>
                             </div>
                         </div>
@@ -166,7 +162,12 @@
             </div>
         </div>
     </div>
+
 </div>
-</html>
+</body>
 <script src="/socket.io/socket.io.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.11.0/qs.min.js" integrity="sha512-/l6vieC+YxaZywUhmqs++8uF9DeMvJE61ua5g+UK0TuHZ4TkTgB1Gm1n0NiA86uEOM9JJ6JUwyR0hboKO0fCng==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript" src="js/createMessage.js"></script>
 <script src="js/main.js"></script>
+
+</html>

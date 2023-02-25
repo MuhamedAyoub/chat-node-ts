@@ -4,29 +4,30 @@ import HomeRouter from "./routes/Home.js"
 import ChatRouter from "./routes/Chat.js"
 import path from "path";
 import socker from "./socker/sockerController.js"
-import {Server} from "socket.io";
-import {ClientToServerEvents, InterServerEvents, ServerToClientEvents, SocketData} from "types/socket";
-
-
+import dotenv from "dotenv"
 //TODO Utls Functions
-const getDirRootName = ():String => {
-  //  return new URL('.', import.meta.url).pathname;
-    return "/home/moha_ayoub/repos2/chat-node-ts/src/";
-}
+
+
 
 // Create Server
 
 const app = express();
 const server = http.createServer(app)
+const dirPath = path.resolve("src");
 
 // Apply middleware
+app.set("views",dirPath + "/views");
+app.set("view engin","pug");
 app.use(express.json());
-app.set("views",path.resolve("src","views"));
-
-app.use(express.static(getDirRootName() + "static"))
+app.use(express.static(  dirPath + "/static"))
+dotenv.config()
 // Use Routes
-app.use("app",HomeRouter);
-app.use("app/chat",ChatRouter);
+app.use("/pug",(req,res) => {
+    res.render("ppg.pug")
+})
+app.use(HomeRouter);
+app.use("/chat",ChatRouter);
+
 // Use Socket
 socker(server);
 const PORT  = 3000 || process.env.PORT

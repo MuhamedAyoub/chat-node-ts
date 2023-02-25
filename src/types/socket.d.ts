@@ -1,20 +1,33 @@
+import {message} from "types/message";
+export declare interface users {
+    username:string
+}
+type joinRoom = {
+    username:string,
+    room:string
+}
+type roomUsers = {
+    users:users[],
+    room:string
+}
 export interface ServerToClientEvents {
-    noArg: () => void;
-    basicEmit: (a: number, b: string, c: Buffer) => void;
-    withAck: (d: string, callback: (e: number) => void) => void;
-    "message":(msg:String) => void;
+    "message":(data:message) => String;
+    "roomUsers":(data:roomUsers)=> void
 }
 
 export interface ClientToServerEvents {
-    "chatMessage":(msg:String) => void;
+    "chatMessage":(msg:string) => void;
+    "joinRoom":(data:joinRoom) => void
 
 }
 
 export interface InterServerEvents {
     ping: () => void;
+
 }
 
 export interface SocketData {
-    name: string;
-    age: number;
+    username: string;
+    room: String;
+    userId:String
 }
