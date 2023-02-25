@@ -2,7 +2,7 @@ import {Server} from "socket.io";
 import {ClientToServerEvents, InterServerEvents, ServerToClientEvents, SocketData} from "types/socket";
 
 import {messageFormat} from "../utls/messages.js";
-import {createMessage, createUser, getCurrentUser, getRoom, getRoomUsers, LeaveUser} from "models/user";
+import {createMessage, createUser, getCurrentUser, getRoom, getRoomUsers, LeaveUser} from "../models/user.js";
 import {filterArabic} from "../utls/filter.js";
 import {message} from "types/message";
 import {createAdapter} from "@socket.io/mongo-adapter";
