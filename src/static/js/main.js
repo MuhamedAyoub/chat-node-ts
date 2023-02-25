@@ -12,11 +12,8 @@ const chatForm = document.getElementById("chat-form");
 console.log("chat ",chatForm)
 const socket  = io()
 
-socket.on("prepareRoom",data => {
-    data.forEach(item =>
-    creatMessage(item)
-    )
-})
+
+
 socket.on("message",data => {
     data.username = username
     console.log(data)
@@ -26,17 +23,26 @@ socket.on("message",data => {
 
 
 })
-
+socket.on("roomUsers",(arg) => {
+    joinRoom(arg.room)
+    getRoomUser(arg.users)
+    socket.on("prepareRoom",data => {
+        data.forEach(item =>
+            creatMessage(item)
+        )
+    })
+})
 
 
 // Message Submit
 chatForm.addEventListener("submit",(event) => {
     event.preventDefault()
 
-     const message = event.target[0].value
+     const message = event.target[0].value.trim()
     // Emit the message to the server
     socket.emit("chatMessage",message)
     event.target[0].value = ""
+    event.target[0].focus()
 
 
 })
@@ -46,4 +52,16 @@ socket.emit("joinRoom",{
 })
 
 
+document.body.addEventListener('keypress', (e) => {
+    if(e.key === "Escape") {
+        const leaveRoom = confirm('Are you sure you want to leave the chatroom?');
+        if (leaveRoom) {
+            window.location = '../index.html';
+        } else {
+            return
+        }
+    }
+
+
+})
 

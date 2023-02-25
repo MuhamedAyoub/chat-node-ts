@@ -1,6 +1,7 @@
 import {message} from "types/message";
 export declare interface users {
-    username:string
+    username:string,
+    
 }
 type joinRoom = {
     username:string,

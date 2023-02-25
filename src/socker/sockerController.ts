@@ -31,7 +31,7 @@ import mongoAdaptor from "../utls/mongoAdaptor.js";
                     text:m.text
                 })
             })
-            socket.emit("prepareRoom", data)
+            io.to(room).emit("prepareRoom", data)
             const user = await createUser({
                 id:socket.id,
                 roomName:room,
