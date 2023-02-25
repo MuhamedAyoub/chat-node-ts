@@ -16,20 +16,21 @@ const server = http.createServer(app)
 const dirPath = path.resolve("src");
 
 // Apply middleware
-app.set("views",dirPath + "/views");
-app.set("view engin","pug");
 app.use(express.json());
 app.use(express.static(  dirPath + "/static"))
 dotenv.config()
 // Use Routes
-app.use("/pug",(req,res) => {
-    res.render("ppg.pug")
-})
 app.use(HomeRouter);
 app.use("/chat",ChatRouter);
 
 // Use Socket
-socker(server);
+
+(
+    async () => {
+        await socker(server)
+    }
+)();
+
 const PORT  = 3000 || process.env.PORT
 
 server.listen(PORT , () => {

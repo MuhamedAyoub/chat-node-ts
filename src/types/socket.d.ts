@@ -11,8 +11,10 @@ type roomUsers = {
     room:string
 }
 export interface ServerToClientEvents {
-    "message":(data:message) => String;
-    "roomUsers":(data:roomUsers)=> void
+    "message":(data:message) => message;
+    "roomUsers":(data:roomUsers)=> void;
+
+    "prepareRoom": (data:message[]|undefined) => message[]|undefined
 }
 
 export interface ClientToServerEvents {

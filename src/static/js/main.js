@@ -11,6 +11,12 @@ console.log("this is username",username)
 const chatForm = document.getElementById("chat-form");
 console.log("chat ",chatForm)
 const socket  = io()
+
+socket.on("prepareRoom",data => {
+    data.forEach(item =>
+    creatMessage(item)
+    )
+})
 socket.on("message",data => {
     data.username = username
     console.log(data)

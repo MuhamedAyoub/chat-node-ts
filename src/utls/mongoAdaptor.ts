@@ -1,17 +1,15 @@
 import * as process from "process";
 
-const { createAdapter } = require("@socket.io/mongo-adapter");
-const { MongoClient } = require("mongodb");
+import  { MongoClient } from "mongodb";
+import {createAdapter} from "@socket.io/mongo-adapter";
 
 const DB = "chat";
 const COLLECTION = "socket.io-adapter-events";
 
 
-const mongoClient = new MongoClient(process.env.DATABASE_URL, {
-    useUnifiedTopology: true,
-});
+const mongoClient = new MongoClient(process.env.DATABASE_URL || '');
 
-export default  async () => {
+export default  async (io:any) => {
     await mongoClient.connect();
 
     try {
@@ -22,8 +20,9 @@ export default  async () => {
     } catch (e) {
         // collection already exists
     }
-    return   mongoClient.db(DB).collection(COLLECTION);
+    const mongoCollection = mongoClient.db(DB).collection(COLLECTION);
 
+    io.adapter(createAdapter(mongoCollection));
 
 }
 
